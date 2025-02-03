@@ -33,6 +33,10 @@ const getThird = () => {
     return colorArr[1]
 }
 
+const getWhite = () => {
+    return "white"
+}
 
-export default {getColor, getPrimary, getSecondary, getThird}
+
+export default {getColor, getPrimary, getSecondary, getThird, getWhite}
 // This could be used for more colors, this seems like an easy shortcut

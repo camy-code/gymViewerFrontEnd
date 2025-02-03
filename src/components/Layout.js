@@ -1,25 +1,25 @@
-import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
+// Some react imports
+import { Outlet } from "react-router-dom";
 
-const Layout = ({ children }) => {
-  
-// TODO: make a header
+import { Box } from "@mui/material";
 
-// Colour 
-const bgColor = "red";
-const textColor = "black";
+const Layout = () => {
+  // TODO: make a header
 
   return (
-    <div>
-      <Header mainColor={bgColor} textColor={textColor}/>
-      <main>{children}</main>
-      <footer>
-        <Footer/>
-        {/* <p>© 2024 My App</p> */}
-      </footer>
-    </div>
+    <>
+      <Header />
+
+      <Outlet />
+
+    
+        <Footer />
+      
+    </>
   );
 };
 

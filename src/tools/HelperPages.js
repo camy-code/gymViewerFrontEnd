@@ -5,6 +5,8 @@ import Shop from "../pages/Shop"
 
 // The following methods make adding more pages to our app the most stupid proof as possible.
 // In order to add a page to this site we can just follow the pattern below
+import { useNavigate } from 'react-router-dom';
+
 
 
 const publicPages =   [
@@ -15,7 +17,7 @@ const publicPages =   [
     },
     {
       compo: <About/>,
-      path: "/about",
+      path: "about",
       name: "about"
     },
     {
@@ -39,5 +41,8 @@ const getAuthPages = () => {
 const getAllPages = () => {
     return (getPublicPages()).concat(getAuthPages())
 }
+
+
+
 
 export default {getAuthPages, getPublicPages, getAllPages}

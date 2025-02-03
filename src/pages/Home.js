@@ -3,13 +3,11 @@ import ColorPick from "../tools/ColorPick"
 
 
 const Home = () => {
-    return <Box sx={{
-        height:200,
-        bgcolor: ColorPick.getSecondary()
-    }}><h1>Hello from home</h1></Box>
+    return <h1>Hello from Home </h1>
+        
 }
 
-export default Home
+export default Home;
 // I think this is how we do it
 
 // Useful article on Box 
