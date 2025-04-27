@@ -19,7 +19,7 @@ const Footer = () => {
 
   // The box here is what allows us to make sure the footer slides all the way down
   return (
-    <Box sx={{ backgroundColor: ColorPick.getColor()[0] }}>
+    <Box sx={{ backgroundColor:"white" }}>
       <Grid
         container
         direction="column"
