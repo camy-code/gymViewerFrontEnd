@@ -1,4 +1,4 @@
-const colorArr = ["#A49E8D", "#504136", "#689689"];  // This would be our color array
+const colorArr = ["#bbe5ed", "white", "white"];  // This would be our color array
     // The following are the colours I got from the color picking
     // Website: https://coolors.co/visualizer/f5e0b7-d6ba73-8bbf9f
 
