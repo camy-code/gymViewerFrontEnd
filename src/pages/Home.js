@@ -15,11 +15,12 @@ const Home = () => {
 
     return <>
     <Box>
-        <Grid container direction={"column"} justifyContent={"center"} alignItems={"center"} spacing={2}>
+        <Grid container direction={"column"} justifyContent={"center"} alignItems={"center"} >
             <Typography variant="h4" fontSize={40} sx={{marginTop:5}}>Open Gym Times</Typography>
             {/* step 1 */}
+            <Box sx={{marginTop:3}}>
             <Searcher/>
-
+            </Box>
             {/* step 2 */}
             <ButtonGroup/>
 

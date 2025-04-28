@@ -47,7 +47,7 @@ export function Searcher() {
           alignItems={"center"}
         >
           <Box sx={{ width: 200 }}>{mForm()}</Box>
-          <Button sx={ButtonDesign.getButtonStyle("red", "red", "white")}>
+          <Button sx={ButtonDesign.getButtonStyle("#228891", "#196970", "white")}>
             Search
           </Button>
         </Grid>
@@ -55,3 +55,4 @@ export function Searcher() {
     </>
   );
 }
+// TODO: make these colors in ColorPick or something so you can change look easily
