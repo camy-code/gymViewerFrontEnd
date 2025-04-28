@@ -11,7 +11,8 @@ const Home = () => {
 
     // TODO: define constants and shit here so you dont fall into same
     // trap of 481
-    const tempArr = [{name:"Monday"},{name:"Tuesday"}] // update later
+    // const tempArr = [{name:"Monday"},{name:"Tuesday"},{name:"Tuesday"}] // update later
+    const tempArr = [{name:"Monday"}] // update later
 
     return <>
     <Box>
@@ -25,9 +26,11 @@ const Home = () => {
             <ButtonGroup/>
 
             {/* step 3 */}
+            <Grid container direction={"column"} spacing={5} sx={{marginTop:2, marginBottom:4}}>
             {tempArr.map((key,index)=>(
                 <GymCard/>
             ))}
+            </Grid>
 
         </Grid>
         </Box>
