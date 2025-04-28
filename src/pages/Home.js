@@ -17,11 +17,17 @@ const Home = () => {
     <Box>
         <Grid container direction={"column"} justifyContent={"center"} alignItems={"center"} spacing={2}>
             <Typography variant="h4" fontSize={40} sx={{marginTop:5}}>Open Gym Times</Typography>
+            {/* step 1 */}
             <Searcher/>
+
+            {/* step 2 */}
             <ButtonGroup/>
+
+            {/* step 3 */}
             {tempArr.map((key,index)=>(
                 <GymCard/>
             ))}
+
         </Grid>
         </Box>
     </>
