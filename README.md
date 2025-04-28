@@ -23,3 +23,13 @@ npm install react-router-dom
 ```
 Happy coding! And make sure to drink water. Anyone is welcome to use this if it helps them!
 
+## My Process
+Initially, I sketched up a sample front end that would do the job. My thinking was to get something that was functional and then I could add fancier features later.
+
+<img src="https://i.ytimg.com/vi/ftiojgoKWfE/maxresdefault.jpg" width="auto" height="200"/>
+
+
+Next I defined 3 mini parts in this design.
+1. Search rectangle
+2. Buttn pair of expand all and collaspe all.
+3. All the cards with info!
