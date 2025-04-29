@@ -6,6 +6,7 @@ import {Box, Typography} from "@mui/material"
 import { Searcher } from "../components/Searcher"
 import { ButtonGroup } from "../components/ButtonGroup"
 import GymCard from "../components/GymCard"
+import { useState } from "react"
 
 const Home = () => {
 
@@ -13,6 +14,9 @@ const Home = () => {
     // trap of 481
     // const tempArr = [{name:"Monday"},{name:"Tuesday"},{name:"Tuesday"}] // update later
     const tempArr = [{name:"Monday"}] // update later
+
+    const [val, setVal] = useState(false);
+
 
     return <>
     <Box>
@@ -28,7 +32,7 @@ const Home = () => {
             {/* step 3 */}
             <Grid container direction={"column"} spacing={5} sx={{marginTop:2, marginBottom:4}}>
             {tempArr.map((key,index)=>(
-                <GymCard/>
+                <GymCard val={val} setVal={(t)=>(setVal(t))}/>
             ))}
             </Grid>
 
