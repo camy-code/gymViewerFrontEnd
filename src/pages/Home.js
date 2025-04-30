@@ -13,9 +13,19 @@ const Home = () => {
     // TODO: define constants and shit here so you dont fall into same
     // trap of 481
     // const tempArr = [{name:"Monday"},{name:"Tuesday"},{name:"Tuesday"}] // update later
-    const tempArr = [{name:"Monday"}] // update later
+    const tempArr = [
+        {name:"Wednesday, April 30", 
+            expand:false,
+            activities:[
+            {color:"red", gym:"red gym", sport:"hockey", time:"12-1pm"},
+            {color:"red", gym:"red gym", sport:"hockey", time:"12-1pm"},
+            {color:"red", gym:"red gym", sport:"hockey", time:"12-1pm"},   
+        ]
+    },
 
-    const [val, setVal] = useState(false);
+    ] // update later
+
+    const [val, setVal] = useState(true); // Change this later
 
 
     return <>

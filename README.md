@@ -31,5 +31,7 @@ Initially, I sketched up a sample front end that would do the job. My thinking w
 
 Next I defined 3 mini parts in this design.
 1. Search rectangle
-2. Buttn pair of expand all and collaspe all.
+2. Button pair of expand all and collaspe all.
 3. All the cards with info!
+
+After a little bit of work I got something that is pictured below. Functionality with the buttons were not there except the card expanding on click. I felt like I would take time trying to perfect this when I needed to focous on how I wished to store the data.
