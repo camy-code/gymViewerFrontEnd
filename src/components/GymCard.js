@@ -25,13 +25,13 @@ return <Box sx={{width:"90%",height:"auto", backgroundColor:color, borderRadius:
 </Box>
 }
 
-const GymCard = ({val, setVal})=> {
+const GymCard = ({day,ActList,val, setVal})=> {
 
 return <Card sx={{width:600, boxShadow:1}}>
     <CardActionArea onClick={()=>{setVal(!val)}}>
     <CardContent>
       <Grid container direction={"row"} justifyContent={"space-between"}>
-        <Typography variant='h4'>Wednesday, April 30</Typography>
+        <Typography variant='h4'>{day}</Typography>
         <Box sx={{scale:2, marginTop:1}}>{val ? <ArrowDropDownIcon /> : <ArrowDropUpIcon />}</Box>
 
       </Grid>
@@ -40,8 +40,10 @@ return <Card sx={{width:600, boxShadow:1}}>
    {val}
    <Collapse in={val} timeout="auto" unmountOnExit>
   <Grid direction={"column"} justifyContent={"flex-start"} alignItems={"center"} sx={{marginTop:2}}>
-   {getBlock("#E0E0E0", "Gold Gym", "Hockey", "12-1pm")}
-  {getBlock("#E0E0E0", "Gold Gym", "Hockey", "12-1pm")}
+  
+  {ActList.map((a, key,index)=>(
+    getBlock(a.color, a.gym, a.sport, a.time)
+  ))}
 
   {/* Make sure to map these later */}
 

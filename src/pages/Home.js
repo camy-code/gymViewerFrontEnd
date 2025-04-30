@@ -17,9 +17,9 @@ const Home = () => {
         {name:"Wednesday, April 30", 
             expand:false,
             activities:[
-            {color:"red", gym:"red gym", sport:"hockey", time:"12-1pm"},
-            {color:"red", gym:"red gym", sport:"hockey", time:"12-1pm"},
-            {color:"red", gym:"red gym", sport:"hockey", time:"12-1pm"},   
+            {color:"#E0E0E0", gym:"red gym", sport:"hockey", time:"12-1pm"},
+            {color:"#E0E0E0", gym:"red gym", sport:"hockey", time:"12-1pm"},
+            {color:"#E0E0E0", gym:"red gym", sport:"hockey", time:"12-1pm"},   
         ]
     },
 
@@ -41,8 +41,8 @@ const Home = () => {
 
             {/* step 3 */}
             <Grid container direction={"column"} spacing={5} sx={{marginTop:2, marginBottom:4}}>
-            {tempArr.map((key,index)=>(
-                <GymCard val={val} setVal={(t)=>(setVal(t))}/>
+            {tempArr.map((a, key,index)=>(
+                <GymCard day={a.name} ActList={a.activities} val={val} setVal={(t)=>(setVal(t))}/>
             ))}
             </Grid>
 
