@@ -6,11 +6,27 @@ import {Box, Typography} from "@mui/material"
 import { Searcher } from "../components/Searcher"
 import { ButtonGroup } from "../components/ButtonGroup"
 import GymCard from "../components/GymCard"
-import { useState, useEffect } from "react"
+import { useState, useEffect, use } from "react"
 
 const Home = () => {
 
-    const [mList, setMList] = useState([]);
+    const [mList, setMList] = useState([{}]);
+    useEffect(() => {
+        // Fetch the data from the API
+        fetch('http://127.0.0.1:5000/activities').then(
+            res => res.json()
+        ).then(
+            data => {
+                console.log(data)
+            }
+        ).catch(
+            err => {
+                console.log("ERROR:")
+                console.log(err)
+            }
+        )
+    }, []);
+ 
     
     const tempArr = [
         {name:"Wednesday, April 30", 
