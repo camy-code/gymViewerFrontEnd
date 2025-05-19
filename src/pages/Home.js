@@ -10,7 +10,7 @@ import { useState, useEffect, use } from "react"
 
 const Home = () => {
 
-    const [mList, setMList] = useState([{}]);
+    const [mList, setMList] = useState([]);
     // TODO: update this once you know your backend format is good.
     useEffect(() => {
         // Fetch the data from the API
@@ -18,7 +18,8 @@ const Home = () => {
             res => res.json()
         ).then(
             data => {
-                console.log(data)
+                console.log(data);
+                setMList(data);
             }
         ).catch(
             err => {
@@ -62,6 +63,16 @@ const Home = () => {
             ))}
             </Grid>
 
+            {/* step 4 */}
+            <h1>Test</h1>
+            <Grid container direction={"column"} spacing={5} sx={{marginTop:2, marginBottom:4}}>
+            {mList.map((a, key,index)=>(
+                <>
+                <GymCard day={a.name} ActList={a.activities} val={val} setVal={(t)=>(setVal(t))}/>
+                <h1>Hello</h1>
+                </>
+            ))}
+            </Grid>
         </Grid>
         </Box>
     </>
