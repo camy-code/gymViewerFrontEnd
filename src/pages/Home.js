@@ -6,13 +6,12 @@ import {Box, Typography} from "@mui/material"
 import { Searcher } from "../components/Searcher"
 import { ButtonGroup } from "../components/ButtonGroup"
 import GymCard from "../components/GymCard"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const Home = () => {
 
-    // TODO: define constants and shit here so you dont fall into same
-    // trap of 481
-    // const tempArr = [{name:"Monday"},{name:"Tuesday"},{name:"Tuesday"}] // update later
+    const [mList, setMList] = useState([]);
+    
     const tempArr = [
         {name:"Wednesday, April 30", 
             expand:false,
@@ -24,8 +23,8 @@ const Home = () => {
     },
 
     ] // update later
-
     const [val, setVal] = useState(true); // Change this later
+    // Above is just dummy date
 
 
     return <>
