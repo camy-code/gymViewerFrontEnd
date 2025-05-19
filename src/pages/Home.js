@@ -56,20 +56,14 @@ const Home = () => {
             {/* step 2 */}
             <ButtonGroup/>
 
-            {/* step 3 */}
-            <Grid container direction={"column"} spacing={5} sx={{marginTop:2, marginBottom:4}}>
-            {tempArr.map((a, key,index)=>(
-                <GymCard day={a.name} ActList={a.activities} val={val} setVal={(t)=>(setVal(t))}/>
-            ))}
-            </Grid>
 
-            {/* step 4 */}
-            <h1>Test</h1>
+            {/* step 3 */}
+            
             <Grid container direction={"column"} spacing={5} sx={{marginTop:2, marginBottom:4}}>
             {mList.map((a, key,index)=>(
                 <>
                 <GymCard day={a.name} ActList={a.activities} val={val} setVal={(t)=>(setVal(t))}/>
-                <h1>Hello</h1>
+         
                 </>
             ))}
             </Grid>
