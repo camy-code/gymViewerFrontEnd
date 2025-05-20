@@ -44,6 +44,28 @@ const Home = () => {
     const [val, setVal] = useState(true); // Change this later
     // Above is just dummy date
 
+    // change a method 
+    const handleClick = (index) => {
+        let tempLS = [...mList]; // OOGA BOOGA clone
+        tempLS[index].expand = !tempLS[index].expand;
+        setMList(tempLS);
+    }
+
+    const massCardChange = (val) => {
+        let tempLS = [...mList]; // OOGA BOOGA clone
+        for (let i = 0; i < tempLS.length; i++) {
+            tempLS[i].expand = val;
+        }
+        setMList(tempLS);
+    }
+
+    const expandClick = () => {
+        massCardChange(true);
+    }
+    const collapseClick = () => {
+        massCardChange(false);
+    }
+    
 
     return <>
     <Box>
@@ -54,15 +76,15 @@ const Home = () => {
             <Searcher/>
             </Box>
             {/* step 2 */}
-            <ButtonGroup/>
+            <ButtonGroup expandClick={()=>{expandClick()}} collapseClick={()=>{collapseClick()}}/>
 
 
             {/* step 3 */}
             
             <Grid container direction={"column"} spacing={5} sx={{marginTop:2, marginBottom:4}}>
-            {mList.map((a, key,index)=>(
+            {mList.map((a, index)=>(
                 <>
-                <GymCard day={a.name} ActList={a.activities} val={val} setVal={(t)=>(setVal(t))}/>
+                <GymCard day={a.name} ActList={a.activities} val={a.expand} setVal={()=>(handleClick(index))}/>
          
                 </>
             ))}
