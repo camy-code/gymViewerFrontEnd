@@ -20,6 +20,7 @@ const Home = () => {
             data => {
                 console.log(data);
                 setMList(data);
+               
             }
         ).catch(
             err => {
