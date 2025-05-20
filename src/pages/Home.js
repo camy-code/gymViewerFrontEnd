@@ -9,10 +9,11 @@ import GymCard from "../components/GymCard"
 import { useState, useEffect, use } from "react"
 
 const Home = () => {
-
+    const [isLoad, setIsLoad] = useState(false);
     const [mList, setMList] = useState([]);
-    // TODO: update this once you know your backend format is good.
+    
     useEffect(() => {
+        setIsLoad(true);
         // Fetch the data from the API
         fetch('http://127.0.0.1:5000/activities').then(
             res => res.json()
@@ -20,7 +21,12 @@ const Home = () => {
             data => {
                 console.log(data);
                 setMList(data);
-               
+                let tempLS = [...data]; // OOGA BOOGA clone
+                tempLS[0].expand = true; // set the first one to be expanded
+                setMList(tempLS);
+                console.log("Remove this later, did we get here?")
+
+                setIsLoad(false); // so we are no longer loading
             }
         ).catch(
             err => {
