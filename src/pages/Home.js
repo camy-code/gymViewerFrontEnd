@@ -7,6 +7,12 @@ import { Searcher } from "../components/Searcher"
 import { ButtonGroup } from "../components/ButtonGroup"
 import GymCard from "../components/GymCard"
 import { useState, useEffect, use } from "react"
+import Loading from "./Loading"
+
+// After webscraper todo:
+     // 1.  Make the top bar pretty
+     // 2. Make search work.
+     // 4. Add loading to be super elegant.
 
 const Home = () => {
     const [isLoad, setIsLoad] = useState(false);
@@ -73,9 +79,16 @@ const Home = () => {
         massCardChange(false);
     }
     
+    if (isLoad) {
+        return <Loading/>
+    }
 
     return <>
-    <Box>
+    <Box sx={{   animation: 'fadeIn 1s ease-in forwards',
+        '@keyframes fadeIn': {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },}}>
         <Grid container direction={"column"} justifyContent={"center"} alignItems={"center"} >
             <Typography variant="h4" fontSize={40} sx={{marginTop:5}}>Open Gym Times</Typography>
             {/* step 1 */}

@@ -6,6 +6,7 @@ import About from "../pages/About" // May not need this, gotta double take desig
 // The following methods make adding more pages to our app the most stupid proof as possible.
 // In order to add a page to this site we can just follow the pattern below
 import { useNavigate } from 'react-router-dom';
+import Loading from "../pages/Loading";
 
 
 
@@ -20,6 +21,9 @@ const publicPages =   [
       path: "about",
       name: "about"
     },
+
+    // Remove this later
+  
    
   ]
 
