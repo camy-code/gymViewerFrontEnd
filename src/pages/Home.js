@@ -62,17 +62,17 @@ const Home = () => {
 
     // change a method 
     const handleClick = (index) => {
-        let tempLS = [...mList]; // OOGA BOOGA clone
+        let tempLS = [...mSlist]; // OOGA BOOGA clone
         tempLS[index].expand = !tempLS[index].expand;
-        setMList(tempLS);
+        setMSList(tempLS);
     }
 
     const massCardChange = (val) => {
-        let tempLS = [...mList]; // OOGA BOOGA clone
+        let tempLS = [...mSlist]; // OOGA BOOGA clone
         for (let i = 0; i < tempLS.length; i++) {
             tempLS[i].expand = val;
         }
-        setMList(tempLS);
+        setMSList(tempLS);
     }
 
     const expandClick = () => {
@@ -124,7 +124,21 @@ setIsLoad(true);
             setMSList(tempLS);
         } else {
             // Time to do some filtering
-            setMSList([]);
+            // filter guide
+                //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+            const searchVal = searchList[searchIndex];
+            let filterLS = tempLS.filter((arr) => arr.activities.some((act) => act.sport === searchVal));
+            
+            for (let i = 0; i < filterLS.length; i++) {
+                for (let j = 0; j < filterLS[i].activities.length; j++) {
+                    if (filterLS[i].activities[j].sport !== searchVal) {
+                        filterLS[i].activities.splice(j, 1);
+                        j--;
+                    } 
+                }
+            }
+            
+                setMSList(filterLS);
         }
     }
 
