@@ -118,7 +118,7 @@ setIsLoad(true);
         console.log("search hello")
       
         let tempLS = [...mList]; 
-
+expandClick();
         console.log(tempLS)
         if (searchIndex === 0) {
             setMSList(tempLS);
@@ -137,9 +137,10 @@ setIsLoad(true);
                     } 
                 }
             }
-            
+
                 setMSList(filterLS);
         }
+        
     }
 
    // End of the logic 
