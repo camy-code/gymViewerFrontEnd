@@ -116,7 +116,7 @@ setIsLoad(true);
     
     const onSearch = () => { // The last things to do here
         console.log("search hello")
-      
+        expandClick();
         // We need to make a copy of the list
         let tempLS = mList.map(item => ({
         ...item,

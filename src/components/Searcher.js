@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid2";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 import ButtonDesign from "../tools/ButtonDesign";
+import { useEffect } from "react";
 
 const mForm = ({sportList, value, setVal}) => {
   return (
@@ -30,6 +31,8 @@ const mForm = ({sportList, value, setVal}) => {
 };
 
 export function Searcher({searchFunc, sportList, value, setVal}) {
+  useEffect(() => {searchFunc()}, [value]);
+
   return (
     <>
       <Box sx={{
@@ -46,13 +49,13 @@ export function Searcher({searchFunc, sportList, value, setVal}) {
           sx={{
             width: 600,
           }}
-          justifyContent={"space-between"}
+          justifyContent={"center"}
           alignItems={"center"}
         >
-          <Box sx={{ width: 200 }}>{mForm({sportList, value, setVal})}</Box>
-          <Button sx={ButtonDesign.getButtonStyle("#228891", "#196970", "white")} onClick={()=>searchFunc()}>
+          <Box sx={{ width: "50%" }}>{mForm({sportList, value, setVal})}</Box>
+          {/* <Button sx={ButtonDesign.getButtonStyle("#228891", "#196970", "white")} onClick={()=>searchFunc()}>
             Search
-          </Button>
+          </Button> */}
         </Grid>
       </Box>
     </>
