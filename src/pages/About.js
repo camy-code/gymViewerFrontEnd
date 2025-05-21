@@ -29,6 +29,11 @@ const About = () => {
 
   return (
     <>
+     <Box sx={{   animation: 'fadeIn 1s ease-in forwards',
+        '@keyframes fadeIn': {
+          from: { opacity: 0 },
+          to: { opacity: 1 },
+        },}}>
       <Box sx={{ padding: "25px" }}>
         {/* <BackButton onClick={handleBack} /> */}
       </Box>
@@ -50,7 +55,7 @@ const About = () => {
           </Grid>
         {myImage()}
         </Grid>
-      
+        </Box>
     </>
   );
 };
