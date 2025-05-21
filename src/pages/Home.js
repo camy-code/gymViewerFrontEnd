@@ -38,6 +38,7 @@ const Home = () => {
             err => {
                 console.log("ERROR:")
                 console.log(err)
+                setIsLoad(true); 
             }
         )
     }, []);
@@ -83,13 +84,34 @@ const Home = () => {
     const [searchList, setSearchList] = useState([]);
 
     useEffect(() => {
-
+setIsLoad(true);
+        // Fetch the data from the API
+        fetch('http://127.0.0.1:5000/sports').then(
+            res => res.json()
+        ).then(
+            data => {
+            
+                setSearchList(data);
+                setIsLoad(false); // so we are no longer loading
+            }
+        ).catch(
+            err => {
+                console.log("ERROR:")
+                console.log(err)
+                setIsLoad(true); 
+            }
+        )
 
     },[])
 
     // Time for search logic 
     const onSearch = () => {
         console.log("search hello")
+    }
+
+    const [searchIndex , setSearchIndex] = useState(0);
+    const handleSearchChange = (index) => {
+        setSearchIndex(index);
     }
 
     if (isLoad) {
@@ -108,7 +130,7 @@ const Home = () => {
             <Typography variant="h4" fontSize={40} sx={{marginTop:5}}>Open Gym Times</Typography>
             {/* step 1 */}
             <Box sx={{marginTop:3}}>
-            <Searcher searchFunc={() => {onSearch()}}/>
+            <Searcher searchFunc={() => {onSearch()}} sportList={searchList} value={searchIndex} setVal={(i)=> handleSearchChange(i)}/>
             </Box>
             {/* step 2 */}
             <ButtonGroup expandClick={()=>{expandClick()}} collapseClick={()=>{collapseClick()}}/>

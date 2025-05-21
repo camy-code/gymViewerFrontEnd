@@ -5,7 +5,7 @@ import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 import ButtonDesign from "../tools/ButtonDesign";
 
-const mForm = () => {
+const mForm = ({sportList, value, setVal}) => {
   return (
     <>
       <FormControl fullWidth sx={{ backgroundColor: "white", borderRadius: 2 }}>
@@ -13,20 +13,23 @@ const mForm = () => {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={0}
+          value={value}
           label="Age"
-          onChange={() => console.log("change")}
+          onChange={(SelectChangeEvent) => setVal(SelectChangeEvent.target.value)}
         >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          
+          {sportList.map((sport, index) => (
+            <MenuItem key={index} value={index}>
+              {sport}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
     </>
   );
 };
 
-export function Searcher({searchFunc}) {
+export function Searcher({searchFunc, sportList, value, setVal}) {
   return (
     <>
       <Box sx={{
@@ -46,7 +49,7 @@ export function Searcher({searchFunc}) {
           justifyContent={"space-between"}
           alignItems={"center"}
         >
-          <Box sx={{ width: 200 }}>{mForm()}</Box>
+          <Box sx={{ width: 200 }}>{mForm({sportList, value, setVal})}</Box>
           <Button sx={ButtonDesign.getButtonStyle("#228891", "#196970", "white")} onClick={()=>searchFunc()}>
             Search
           </Button>
