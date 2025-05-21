@@ -28,7 +28,7 @@ const Home = () => {
         ).then(
             data => {
                 console.log(data);
-                setMList(data);
+                
                 let tempLS = [...data]; // OOGA BOOGA clone
                 tempLS[0].expand = true; // set the first one to be expanded
                 setMList(tempLS);
@@ -117,7 +117,12 @@ setIsLoad(true);
     const onSearch = () => { // The last things to do here
         console.log("search hello")
       
-        let tempLS = [...mList]; 
+        // We need to make a copy of the list
+        let tempLS = mList.map(item => ({
+        ...item,
+        activities: item.activities.map(act => ({ ...act })),
+        expand: item.expand,
+    }));
 expandClick();
         console.log(tempLS)
         if (searchIndex === 0) {
