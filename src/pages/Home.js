@@ -30,7 +30,7 @@ const Home = () => {
                 let tempLS = [...data]; // OOGA BOOGA clone
                 tempLS[0].expand = true; // set the first one to be expanded
                 setMList(tempLS);
-                console.log("Remove this later, did we get here?")
+                
 
                 setIsLoad(false); // so we are no longer loading
             }
@@ -78,10 +78,25 @@ const Home = () => {
     const collapseClick = () => {
         massCardChange(false);
     }
-    
+  
+      // ----- search stuff -----
+    const [searchList, setSearchList] = useState([]);
+
+    useEffect(() => {
+
+
+    },[])
+
+    // Time for search logic 
+    const onSearch = () => {
+        console.log("search hello")
+    }
+
     if (isLoad) {
         return <Loading/>
     }
+
+  
 
     return <>
     <Box sx={{   animation: 'fadeIn 1s ease-in forwards',
@@ -93,7 +108,7 @@ const Home = () => {
             <Typography variant="h4" fontSize={40} sx={{marginTop:5}}>Open Gym Times</Typography>
             {/* step 1 */}
             <Box sx={{marginTop:3}}>
-            <Searcher/>
+            <Searcher searchFunc={() => {onSearch()}}/>
             </Box>
             {/* step 2 */}
             <ButtonGroup expandClick={()=>{expandClick()}} collapseClick={()=>{collapseClick()}}/>

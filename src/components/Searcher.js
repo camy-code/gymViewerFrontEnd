@@ -26,7 +26,7 @@ const mForm = () => {
   );
 };
 
-export function Searcher() {
+export function Searcher({searchFunc}) {
   return (
     <>
       <Box sx={{
@@ -47,7 +47,7 @@ export function Searcher() {
           alignItems={"center"}
         >
           <Box sx={{ width: 200 }}>{mForm()}</Box>
-          <Button sx={ButtonDesign.getButtonStyle("#228891", "#196970", "white")}>
+          <Button sx={ButtonDesign.getButtonStyle("#228891", "#196970", "white")} onClick={()=>searchFunc()}>
             Search
           </Button>
         </Grid>
