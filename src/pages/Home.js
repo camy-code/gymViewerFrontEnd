@@ -17,6 +17,8 @@ import Loading from "./Loading"
 const Home = () => {
     const [isLoad, setIsLoad] = useState(false);
     const [mList, setMList] = useState([]);
+    // the show list
+    const [mSlist, setMSList] = useState([]);
     
     useEffect(() => {
         setIsLoad(true);
@@ -30,7 +32,7 @@ const Home = () => {
                 let tempLS = [...data]; // OOGA BOOGA clone
                 tempLS[0].expand = true; // set the first one to be expanded
                 setMList(tempLS);
-                
+                setMSList(tempLS);
 
                 setIsLoad(false); // so we are no longer loading
             }
@@ -81,6 +83,7 @@ const Home = () => {
     }
   
       // ----- search stuff -----
+        // 1. fetch the data from API
     const [searchList, setSearchList] = useState([]);
 
     useEffect(() => {
@@ -105,14 +108,27 @@ setIsLoad(true);
     },[])
 
     // Time for search logic 
-    const onSearch = () => {
-        console.log("search hello")
-    }
 
     const [searchIndex , setSearchIndex] = useState(0);
     const handleSearchChange = (index) => {
         setSearchIndex(index);
     }
+    
+    const onSearch = () => { // The last things to do here
+        console.log("search hello")
+      
+        let tempLS = [...mList]; 
+
+        console.log(tempLS)
+        if (searchIndex === 0) {
+            setMSList(tempLS);
+        } else {
+            // Time to do some filtering
+            setMSList([]);
+        }
+    }
+
+   // End of the logic 
 
     if (isLoad) {
         return <Loading/>
@@ -139,7 +155,7 @@ setIsLoad(true);
             {/* step 3 */}
             
             <Grid container direction={"column"} spacing={5} sx={{marginTop:2, marginBottom:4}}>
-            {mList.map((a, index)=>(
+            {mSlist.map((a, index)=>(
                 <>
                 <GymCard day={a.name} ActList={a.activities} val={a.expand} setVal={()=>(handleClick(index))}/>
          
