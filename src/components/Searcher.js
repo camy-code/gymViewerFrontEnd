@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Button } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
@@ -9,14 +9,16 @@ import { useEffect } from "react";
 const mForm = ({sportList, value, setVal}) => {
   return (
     <>
-      <FormControl fullWidth sx={{ backgroundColor: "white", borderRadius: 2 }}>
-        <InputLabel id="demo-simple-select-label">Sport</InputLabel>
+      <FormControl fullWidth  sx={{ backgroundColor: "white", borderRadius: 2, border:"1px solid black"  }}
+      >
+        <InputLabel id="demo-simple-select-label" sx={{display:"none"}}>input</InputLabel>
         <Select
-          labelId="demo-simple-select-label"
+          
           id="demo-simple-select"
           value={value}
-          label="Age"
+          
           onChange={(SelectChangeEvent) => setVal(SelectChangeEvent.target.value)}
+          
         >
           
           {sportList.map((sport, index) => (
@@ -45,13 +47,14 @@ export function Searcher({searchFunc, sportList, value, setVal}) {
       }}>
         <Grid
           container
-          direction={"row"}
+          direction={"column"}
           sx={{
             width: 600,
           }}
           justifyContent={"center"}
           alignItems={"center"}
         >
+          <Typography variant="h5">Activity: </Typography>
           <Box sx={{ width: "50%" }}>{mForm({sportList, value, setVal})}</Box>
           {/* <Button sx={ButtonDesign.getButtonStyle("#228891", "#196970", "white")} onClick={()=>searchFunc()}>
             Search
