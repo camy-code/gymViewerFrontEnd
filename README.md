@@ -1,6 +1,11 @@
 # Hello! 
 The following is a front end for improving the website [here.](https://schedules.oval.ucalgary.ca/MobileOpenGymTimes.aspx)
 
+A video link for the project can be found [here](https://youtu.be/2ereNpCA3zM)
+
+- Backend [code](https://github.com/camy-code/gymViewerBackEnd)
+- Frontend [code](https://github.com/camy-code/gymViewerFrontEnd)
+
 ## Motivation
 My motivation for making is this project is that I found that looking for when floor hockey was going on at the gym was too cumbersome on the university website. Then I noticed while looking at the raw html of the Univeristy gym website that I could scrape the information and make something better.
 
@@ -24,14 +29,11 @@ npm install react-router-dom
 Happy coding! And make sure to drink water. Anyone is welcome to use this if it helps them!
 
 ## My Process
-Initially, I sketched up a sample front end that would do the job. My thinking was to get something that was functional and then I could add fancier features later.
+Initially, I sketched up a sample front end that would do the job. My thinking was to get something that was functional and then I could add fancier features later. After I got that functioning, I began to look at how to connect flask to my react website. Once connected, I made some dummy data to format the JSON how I wanted it to be.
 
-<img src="https://i.ytimg.com/vi/ftiojgoKWfE/maxresdefault.jpg" width="auto" height="200"/>
+Next, I made a scraper and followed the format of my dummy data that worked.
 
+Lastly, I finalized styling to have a feel that I was pleased with.
 
-Next I defined 3 mini parts in this design.
-1. Search rectangle
-2. Button pair of expand all and collaspe all.
-3. All the cards with info!
-
-After a little bit of work I got something that is pictured below. Functionality with the buttons were not there except the card expanding on click. I felt like I would take time trying to perfect this when I needed to focous on how I wished to store the data.
+## Notes
+If I were to work on this furtherly, I would look into how to add advance search features like day. Since I just wanted to get introduced to adding a backend to my front end projects I will leave the project here for now.
