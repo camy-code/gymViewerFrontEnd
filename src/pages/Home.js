@@ -46,17 +46,9 @@ const Home = () => {
     }, []);
  
     
-    const tempArr = [
-        {name:"Wednesday, April 30", 
-            expand:false,
-            activities:[
-            {color:"#E0E0E0", gym:"red gym", sport:"hockey", time:"12-1pm"},
-            {color:"#E0E0E0", gym:"red gym", sport:"hockey", time:"12-1pm"},
-            {color:"#E0E0E0", gym:"red gym", sport:"hockey", time:"12-1pm"},   
-        ]
-    },
+  
 
-    ] // update later
+     // update later
     const [val, setVal] = useState(true); // Change this later
     // Above is just dummy date
 

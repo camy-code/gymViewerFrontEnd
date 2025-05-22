@@ -6,7 +6,7 @@ import { height, margin, width } from "@mui/system";
 
 export function ButtonGroup({ expandClick, collapseClick }) {
   const style123 = [{height:50, width:150},
-    ButtonDesign.getButtonStyle("purple", "blue", "white"),
+    ButtonDesign.getButtonStyle("#0D9488", "blue", "white"),
   ];
 
   return (

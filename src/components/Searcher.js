@@ -38,7 +38,7 @@ export function Searcher({searchFunc, sportList, value, setVal}) {
   return (
     <>
       <Box sx={{
-        backgroundColor: "#bbe5ed",
+        backgroundColor: "#374151",
         paddingLeft:15,
         paddingRight:15,
         paddingTop: 2,
@@ -50,11 +50,12 @@ export function Searcher({searchFunc, sportList, value, setVal}) {
           direction={"column"}
           sx={{
             width: 600,
+            
           }}
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Typography variant="h5">Activity: </Typography>
+          <Typography variant="h5" color="white">Activity: </Typography>
           <Box sx={{ width: "50%" }}>{mForm({sportList, value, setVal})}</Box>
           {/* <Button sx={ButtonDesign.getButtonStyle("#228891", "#196970", "white")} onClick={()=>searchFunc()}>
             Search
